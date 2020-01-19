@@ -5,6 +5,9 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
+import logData from "../content/logs.json"
+import userData from "../content/users.json"
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
