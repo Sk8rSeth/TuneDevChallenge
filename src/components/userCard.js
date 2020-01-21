@@ -10,6 +10,7 @@ function checkUrl(url) {
     }
     return false;
 }
+
 function getAvatar(user) {
     if(user.avatar) {
         // adding in this check because some given json urls are bad
@@ -26,10 +27,7 @@ function getAvatar(user) {
     }
 }
 
-
-
 const UserCard = ({user}) => (
-
     <div className={'user-card user-id-' + user.id}>
         <div className="user-info-container">
         <div className="profile-img">{getAvatar(user)}</div>
