@@ -1,0 +1,21 @@
+.page-container {
+    @include xy-grid;
+    @include xy-grid-container;
+
+    .card-section {
+        @include xy-cell();
+        
+        .card-container {
+            @include xy-grid;
+            @include xy-grid-layout(3, '.user-card');
+            @include breakpoint (small only) {
+                @include xy-grid-layout(1, '.user-card');
+            }
+            @include breakpoint (medium only) {
+                @include xy-grid-layout(2, '.user-card');
+            }
+        }
+    }
+
+    
+}

@@ -5,7 +5,7 @@ import Cog from './cog'
 
 const Header = ({ siteTitle }) => (
   <header className="cell small-12">
-    <div className="grid-x align-right">
+    <div className="nav-container grid-x align-right">
       <div className="cell small-1">
         <Cog />
       </div>

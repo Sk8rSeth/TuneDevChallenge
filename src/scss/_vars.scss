@@ -17,3 +17,8 @@ $fa-font-path: "../src/fontawesome-css/webfonts";
 
 // change row width
 $row-width: rem-calc(1200);
+
+
+@mixin random-bgr(){
+    background-color: rgb(random(255), random(255), random(255));
+}

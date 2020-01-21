@@ -11,6 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "../scss/all.scss"
+import UserCard from "./userCard"
+import userData from "../content/users.json"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,10 +26,14 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="grid-x grid-container">
+    <div className="page-container">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div className="cell small-12">
-        <main>{children}</main>
+      <div className="card-section">
+        <main className="card-container">
+          {userData.map((data) => {
+            return <UserCard user={data}/>
+          })}
+        </main>
       </div>
     </div>
   )

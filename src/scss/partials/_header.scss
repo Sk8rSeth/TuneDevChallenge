@@ -1,0 +1,7 @@
+header {
+    @include xy-cell();
+
+    .nav-container {
+        @include xy-grid;
+    }
+}
