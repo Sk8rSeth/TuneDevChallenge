@@ -28,8 +28,8 @@ function getAvatar(user) {
     }
 }
 
-const UserCard = ({user}) => (
-    <div className={'user-card user-id-' + user.id}>
+const UserCard = ({user, theme}) => (
+    <div className={'user-card user-id-' + user.id +' '+ theme}>
         <div className="user-info-container">
         <div className="profile-img">{getAvatar(user)}</div>
             <div className="name-container">
@@ -37,7 +37,7 @@ const UserCard = ({user}) => (
                 <div className="position">{user.occupation}</div>
             </div>
         </div>
-        <LogChart id={user.id} />
+        <LogChart id={user.id} theme={theme} />
     </div>
 )
 

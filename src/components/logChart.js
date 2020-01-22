@@ -23,11 +23,11 @@ function getFormattedData(userId) {
     return dataArr;
 }
 
-const LogChart = ({id}) => (
+const LogChart = ({id, theme}) => (
     <div className="stats-container">
         
         <div className="graph-container">
-            <Chart data={getFormattedData(id)} cardId={id}/>
+            <Chart data={getFormattedData(id)} cardId={id} theme={theme}/>
         </div>
         <div className="stats">
 

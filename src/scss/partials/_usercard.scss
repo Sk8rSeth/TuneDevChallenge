@@ -7,7 +7,7 @@
     background-color:#E0E5EC;
     box-shadow: 9px 9px 16px rgba(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);
     
-    &.darkmode {
+    &.darkMode {
         background-color: #505050;
         box-shadow: 9px 9px 16px rgba(56, 57, 58, 0.6), -9px -9px 16px rgba(89, 93, 99, 0.6) ;
     }
@@ -68,15 +68,15 @@
     }
 
     .stats-container {
+        margin-top: 2rem;
         @include xy-grid();
 
         .graph-container {
-            @include xy-cell(8);
-
+            @include xy-cell(7);
         }
 
         .stats {
-            @include xy-cell(4);
+            @include xy-cell(5);
         }
 
     }
