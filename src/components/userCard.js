@@ -1,5 +1,5 @@
 import React from 'react'
-import logData from "../content/logs.json"
+import LogChart from './logChart'
 
 function checkUrl(url) {
     var checker = new XMLHttpRequest();
@@ -12,6 +12,7 @@ function checkUrl(url) {
 }
 
 function getAvatar(user) {
+    
     if(user.avatar) {
         // adding in this check because some given json urls are bad
         checkUrl(user.avatar);
@@ -36,14 +37,7 @@ const UserCard = ({user}) => (
                 <div className="position">{user.occupation}</div>
             </div>
         </div>
-        <div className="stats-container">
-            <div className="graph-container">
-
-            </div>
-            <div className="stats">
-
-            </div>
-        </div>
+        <LogChart id={user.id} />
     </div>
 )
 

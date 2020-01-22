@@ -9,11 +9,7 @@ import UserCard from '../components/userCard'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
     <div className="grid-x grid-container align-middle align-center">
-      <Image />
       <UserCard />
     </div>
   </Layout>

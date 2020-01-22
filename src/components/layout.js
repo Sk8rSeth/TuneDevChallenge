@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, {useState} from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -30,6 +30,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="card-section">
         <main className="card-container">
+          {/* this makes a large single loop over all the individual json objects, loop is used all the way down */}
           {userData.map((data) => {
             return <UserCard user={data}/>
           })}

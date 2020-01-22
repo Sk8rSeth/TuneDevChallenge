@@ -1,5 +1,5 @@
 .user-card {
-    min-height: 15rem;
+    min-height: 18rem;
     padding: 1rem;
     border-radius: 5px;
     margin-top: 1rem;
@@ -69,6 +69,15 @@
 
     .stats-container {
         @include xy-grid();
+
+        .graph-container {
+            @include xy-cell(8);
+
+        }
+
+        .stats {
+            @include xy-cell(4);
+        }
 
     }
 }
