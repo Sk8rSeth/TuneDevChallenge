@@ -3,5 +3,16 @@ header {
 
     .nav-container {
         @include xy-grid;
+
+        .cogMenu {
+
+            img {
+                height: 2rem;
+                width: 2rem;
+                cursor: pointer;
+                margin: 1rem;
+                margin-bottom: 0;
+            }
+        }
     }
 }
