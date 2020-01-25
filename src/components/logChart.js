@@ -1,15 +1,11 @@
 import React from 'react'
 import logData from "../content/logs.json"
 import Chart from './myChart'
+import Stats from './stats';
 
 function getFormattedData(userId) {
-    let userData = logData.filter(function(data){
-        if(data.user_id === userId){
-            return true
-        } else {
-            return false;
-        }
-    })
+    let userData = getUserData(userId);
+
     let newData = userData.filter(function(item){
         if(item.type === 'conversion'){
             return true;
@@ -23,6 +19,17 @@ function getFormattedData(userId) {
     return dataArr;
 }
 
+function getUserData(userId) {
+    let userData = logData.filter(function(data){
+        if(data.user_id === userId){
+            return true
+        } else {
+            return false;
+        }
+    })
+    return userData;
+}
+
 const LogChart = ({id, theme}) => (
     <div className="stats-container">
         
@@ -30,7 +37,7 @@ const LogChart = ({id, theme}) => (
             <Chart data={getFormattedData(id)} cardId={id} theme={theme}/>
         </div>
         <div className="stats">
-
+            <Stats logData={getUserData(id)} />
         </div>
     </div>
 )

@@ -47,6 +47,7 @@ class Chart extends React.Component {
 				<div>
 					<Line 
 					data={this.state.chartData}
+					ref = {(reference) => this.reference = reference}
 					options={{
 						title:{display:false},
 						legend:{display:false},
@@ -76,5 +77,13 @@ class Chart extends React.Component {
 		)
 	  }
   }
+
+}
+
+function redraw(){
+	useEffect(() => {
+		let lineChart = this.reference.chartInstance;
+		lineChart.update();
+	}, [this.props.theme])
 }
 export default Chart;

@@ -46,6 +46,7 @@ const Layout = ({ children }) => {
       setTheme('darkMode');
       document.body.classList.add('darkMode');
       document.body.classList.remove('lightMode');
+      
     } else {
       setTheme('lightMode');
       document.body.classList.remove('darkMode');

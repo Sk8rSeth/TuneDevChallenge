@@ -5,7 +5,7 @@ function checkUrl(url) {
     var checker = new XMLHttpRequest();
     // opens the file with get method, async=true
     checker.open('HEAD', url, true);
-    if(checker.status == 200) {
+    if(checker.status === 200) {
         return true;
     }
     return false;

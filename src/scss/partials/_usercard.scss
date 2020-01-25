@@ -10,6 +10,22 @@
     &.darkMode {
         background-color: #505050;
         box-shadow: 9px 9px 16px rgba(56, 57, 58, 0.6), -9px -9px 16px rgba(89, 93, 99, 0.6) ;
+
+        .name-container .name {
+            color: lighten($name-color, 10%);
+        }
+        .revenue .number {
+            font-size: 2rem;
+            color: darken($revenue-color, 10%);
+        }
+
+        .impressions .number {
+            color: darken($impression-color, 10%);
+        }
+
+        .conversions .number {
+            color: darken($conversion-color, 10%);
+        }
     }
 
     .user-info-container {
@@ -59,7 +75,7 @@
 
             .position {
                 font-size: 1.2rem;
-                color: #8d99a5;
+                color: $light;
                 text-transform: capitalize;
                 padding: 0;
                 padding-left: .75rem;
@@ -68,15 +84,43 @@
     }
 
     .stats-container {
-        margin-top: 2rem;
         @include xy-grid();
 
         .graph-container {
             @include xy-cell(7);
+            margin-top: 2rem;
         }
 
         .stats {
             @include xy-cell(5);
+            text-align: right;
+
+            .number {
+                font-weight: bold;
+                font-size: 2rem;
+                margin-bottom: 0;
+                padding-top: .75rem;
+                line-height: 1.8rem;
+            }
+
+            .revenue .number {
+                font-size: 2rem;
+                color: $revenue-color;
+            }
+
+            .impressions .number {
+                color: $impression-color;
+            }
+
+            .conversions .number {
+                color: $conversion-color;
+            }
+
+            .stat-title {
+                font-size: 1rem;
+                color: $light;
+                font-weight: bold;
+            }
         }
 
     }
