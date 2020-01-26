@@ -13,8 +13,9 @@ function getFormattedData(userId) {
     })
     let dataArr = [];
     const formattedData = newData.map(function(item){
-        var date = Date.parse(item.time);
-        return dataArr.push({x:date, y:item.revenue})
+        // var date = Date.parse(item.time);
+        // console.log(item.time);
+        return dataArr.push({x:item.time, y:item.revenue})
     })
     return dataArr;
 }

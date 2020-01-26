@@ -1,5 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {Line} from 'react-chartjs-2'
+
+function getDateDiv(props) {
+	let date = props.data.slice(0,15).map(function(item){
+		return new Date(item.x).getFullYear();
+	});
+	let dateDive = 'Conversions ' + date[0];
+	return dateDive;
+}
 
 class Chart extends React.Component {
   constructor(props) {
@@ -8,7 +16,7 @@ class Chart extends React.Component {
 		return Date(item.x);
 	});
 	const lineColor = () => {
-		if(this.props.theme == 'lightMode') {
+		if(this.props.theme === 'lightMode') {
 			return "rgba(56, 57, 58, 0.75)";
 		} else {
 			return "rgba(163,177,198, 0.75)";
@@ -32,18 +40,15 @@ class Chart extends React.Component {
   }
 
   render() {
-	  let dateDiv = this.props.data.slice(0,15).map(function(item){
-		return Date(item.x);
-	});
-	  if(this.props.data == 'null' || this.props.data == 'undefined'){
-		  return (
-			  <div>
-				  no chart data
-			  </div>
-		  )
-	  } else {
-		  return(
-			  <>
+	if(this.props.data === 'null' || this.props.data === 'undefined'){
+		return (
+			<div>
+				no chart data
+			</div>
+		)
+	} else {
+		return(
+			<>
 				<div>
 					<Line 
 					data={this.state.chartData}
@@ -66,24 +71,16 @@ class Chart extends React.Component {
 								display:false
 							}]
 						}
-						
 					}} 
 					/>
 				</div>
-				<div className="chart-dates">
-					
+				<div className="chart-date">
+					{getDateDiv(this.props)}
 				</div>
 			</>
 		)
-	  }
+	}
   }
 
-}
-
-function redraw(){
-	useEffect(() => {
-		let lineChart = this.reference.chartInstance;
-		lineChart.update();
-	}, [this.props.theme])
 }
 export default Chart;

@@ -91,6 +91,12 @@
             margin-top: 2rem;
         }
 
+        .chart-date {
+            color: $light;
+            font-weight: bold;
+            text-align: center;
+        }
+
         .stats {
             @include xy-cell(5);
             text-align: right;

@@ -50,8 +50,13 @@ function getTotalRevenue(logData) {
     for (i = 0; i < revData.length; i++) {
         revenue += revData[i].revenue;
     }
-    let finalRevenue = '$'+(Math.round(revenue * 100) / 100).toFixed(2);
+    let totalRevenue = '$'+(Math.round(revenue * 100) / 100).toFixed(2);
+    let finalRevenue = numberWithCommas(totalRevenue);
     return finalRevenue;
+}
+
+function numberWithCommas(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 export default Stats;

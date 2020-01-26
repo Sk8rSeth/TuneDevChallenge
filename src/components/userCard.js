@@ -2,21 +2,24 @@ import React from 'react'
 import LogChart from './logChart'
 
 function checkUrl(url) {
-    var checker = new XMLHttpRequest();
-    // opens the file with get method, async=true
-    checker.open('HEAD', url, true);
-    if(checker.status === 200) {
-        return true;
-    }
-    return false;
+    // this whole function can be executed in browser so i have no way to get rid of the '403' errors in image urls from the given json
+    let checked = true;
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function(url){
+        if (request.status == 200) {
+            return true;
+        } 
+    };
+    request.open('GET', url, true);
+    request.send();
+    return checked;
 }
 
 function getAvatar(user) {
     
     if(user.avatar) {
-        // adding in this check because some given json urls are bad
-        checkUrl(user.avatar);
-        if(checkUrl){
+        let checked = checkUrl(user.avatar);
+        if(checked === true){
             return (<img src={user.avatar} alt={user.name + ' Profile Image'} />);
         } else {
             var single = user.name.charAt(0);
